@@ -43,7 +43,7 @@ public class Arbol {
         }
     }
     
-    ///////Insertar Balanceado////////
+       ///////Insertar Balanceado////////
     public Nodo insertarB(Nodo nuevo, Nodo subAr){
         Nodo nuevoP=subAr;
         if(nuevo.dato<subAr.dato){
@@ -54,8 +54,10 @@ public class Arbol {
                 if((getFE(subAr.izq)-getFE(subAr.der)==2)){
                     if(nuevo.dato<subAr.izq.dato){
                         nuevoP=rotacionSIzq(subAr);
+                        System.out.println("Rotación Simple a la Izquierda: "+nuevo.dato);
                     }else{
                         nuevoP=rotacionDobleIzq(subAr);
+                        System.out.println("Rotación Doble a la Izquierda: "+nuevo.dato);
                     }
                 }
             }
@@ -67,13 +69,15 @@ public class Arbol {
                 if((getFE(subAr.der)-getFE(subAr.izq)==2)){
                     if(nuevo.dato>subAr.der.dato){
                         nuevoP=rotacionSDer(subAr);
+                        System.out.println("Rotación Simple a la Derecha: "+nuevo.dato);
                     }else{
                         nuevoP=rotacionDobleDer(subAr);
+                        System.out.println("Rotación Doble a la Derecha: "+nuevo.dato);
                     }
                 }
             }
         }else{
-            System.out.println("El nodo ya existe");
+            System.out.println("El numero: "+ nuevo.dato +" ya existe");
         }
         //Actualizando altura
         if((subAr.izq==null)&&(subAr.der!=null)){
