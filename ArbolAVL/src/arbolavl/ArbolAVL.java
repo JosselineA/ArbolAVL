@@ -15,7 +15,19 @@ public class ArbolAVL {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Arbol arbolAVL = new Arbol();
+       arbolAVL.insertar(10);
+       arbolAVL.insertar(5);
+       arbolAVL.insertar(13);
+       arbolAVL.insertar(1);
+       arbolAVL.insertar(6);
+       arbolAVL.insertar(17);
+       arbolAVL.insertar(16);
+       arbolAVL.preOrden(arbolAVL.getRaiz());
+        System.out.println("");
+       arbolAVL.inOrden(arbolAVL.getRaiz());
+        System.out.println("");
+       arbolAVL.postOrden(arbolAVL.getRaiz());
     }
     
 }
